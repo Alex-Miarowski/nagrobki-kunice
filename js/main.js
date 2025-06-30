@@ -34,7 +34,7 @@ const prepareDOMEvents = () => {
 
 const checkSubpage = () => {
 	if (window.innerWidth >= 992) {
-		if (window.location.pathname.includes('/index.html') || window.location.pathname === '/') {
+		if (window.location.pathname.includes('/nagrobki-kunice') || window.location.pathname === '/') {
 			window.addEventListener('scroll', scrollSpyHandle)
 			window.addEventListener('resize', setW)
 			setW()
