@@ -1,0 +1,33 @@
+@media (min-width: 768px) {
+	.nav {
+		&__logo {
+			margin: 0.4em 1em;
+			height: 80px;
+		}
+	}
+
+	.section {
+		padding: 3.4em 2.4em;
+		scroll-margin-top: 86px;
+	}
+
+	.header {
+		background-image: url('../img/heros/hero_medium.webp');
+	}
+
+	.offer {
+		&__cards {
+			&-gravestones,
+			&-assortment {
+				display: inline-flex;
+				flex-wrap: wrap;
+				justify-content: flex-start;
+				gap: 60px;
+			}
+
+			&__card {
+				padding: 0em 1.6em;
+			}
+		}
+	}
+}
