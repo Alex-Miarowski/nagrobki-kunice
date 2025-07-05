@@ -34,14 +34,15 @@ const prepareDOMEvents = () => {
 
 const checkSubpage = () => {
 	if (window.innerWidth >= 992) {
-		if (window.location.pathname.includes('/nagrobki-kunice/') || window.location.pathname === '/') {
-			window.addEventListener('scroll', scrollSpyHandle)
-			window.addEventListener('resize', setW)
-			setW()
-		} else if (window.location.pathname.includes('/galery.html')) {
+		if (window.location.pathname.includes('/galery.html')) {
 			window.removeEventListener('scroll', scrollSpyHandle)
 			activeClassReset()
 			allNavDesktopItems[2].classList.add('nav__item-desktop--active')
+		} else if (window.location.pathname.includes('/nagrobki-kunice/')) {
+			//|| window.location.pathname === '/') {
+			window.addEventListener('scroll', scrollSpyHandle)
+			window.addEventListener('resize', setW)
+			setW()
 		}
 	}
 }
