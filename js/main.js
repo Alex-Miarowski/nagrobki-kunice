@@ -38,6 +38,7 @@ const checkSubpage = () => {
 			window.removeEventListener('scroll', scrollSpyHandle)
 			activeClassReset()
 			allNavDesktopItems[2].classList.add('nav__item-desktop--active')
+			f_it()
 		} else if (window.location.pathname.includes('/nagrobki-kunice/')) {
 			//|| window.location.pathname === '/') {
 			window.addEventListener('scroll', scrollSpyHandle)
@@ -118,43 +119,45 @@ const setW = () => {
 	//console.log(maxWidth + 'px; W: ' + calculatedWidth)
 }
 
-const toggleBtn = document.getElementById('filterToggle')
-const filterList = document.getElementById('filterList')
-const dropdown = document.querySelector('.filter-dropdown')
-const buttons = filterList.querySelectorAll('button')
-const items = document.querySelectorAll('.gallery-item')
+const f_it = () => {
+	const toggleBtn = document.getElementById('filterToggle')
+	const filterList = document.getElementById('filterList')
+	const dropdown = document.querySelector('.filter-dropdown')
+	const buttons = filterList.querySelectorAll('button')
+	const items = document.querySelectorAll('.gallery-item')
 
-toggleBtn.addEventListener('click', () => {
-	dropdown.classList.toggle('open')
-})
-
-buttons.forEach(button => {
-	button.addEventListener('click', () => {
-		// Zmień aktywny przycisk
-		buttons.forEach(btn => btn.classList.remove('active'))
-		button.classList.add('active')
-
-		const filter = button.getAttribute('data-filter')
-
-		// Filtrowanie obrazków
-		items.forEach(item => {
-			if (filter === 'all' || item.classList.contains(filter)) {
-				item.style.display = 'block'
-			} else {
-				item.style.display = 'none'
-			}
-		})
-
-		// Zamknij dropdown po wyborze
-		dropdown.classList.remove('open')
+	toggleBtn.addEventListener('click', () => {
+		dropdown.classList.toggle('open')
 	})
-})
 
-// Zamknij dropdown po kliknięciu poza nim
-document.addEventListener('click', e => {
-	if (!dropdown.contains(e.target)) {
-		dropdown.classList.remove('open')
-	}
-})
+	buttons.forEach(button => {
+		button.addEventListener('click', () => {
+			// Zmień aktywny przycisk
+			buttons.forEach(btn => btn.classList.remove('active'))
+			button.classList.add('active')
+
+			const filter = button.getAttribute('data-filter')
+
+			// Filtrowanie obrazków
+			items.forEach(item => {
+				if (filter === 'all' || item.classList.contains(filter)) {
+					item.style.display = 'block'
+				} else {
+					item.style.display = 'none'
+				}
+			})
+
+			// Zamknij dropdown po wyborze
+			dropdown.classList.remove('open')
+		})
+	})
+
+	// Zamknij dropdown po kliknięciu poza nim
+	document.addEventListener('click', e => {
+		if (!dropdown.contains(e.target)) {
+			dropdown.classList.remove('open')
+		}
+	})
+}
 
 document.addEventListener('DOMContentLoaded', main)
