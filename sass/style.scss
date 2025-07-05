@@ -40,7 +40,20 @@ body {
 		&-text {
 			padding: 0.4em 0 0;
 			margin: 1.2em 0 0;
-			text-align: center;
+			text-align: left;
+			// background-color: rgba($color: colors.$main, $alpha: 0.4);
+			&-box {
+				background-color: black; /* Czarny pasek jako tło */
+				width: 100%; /* Szerokość na 100% szerokości ekranu */
+				display: flex;
+				justify-content: center; /* Wyśrodkowanie tekstu */
+			}
+
+			&-shadow {
+				width: 100vw;
+				height: 100%;
+				background-color: rgba($color: colors.$main, $alpha: 0.4);
+			}
 		}
 	}
 }
@@ -331,3 +344,115 @@ body {
 @import './medium';
 @import './large';
 @import './xlarge';
+
+.gallery-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	padding: 2rem;
+
+	.filter-dropdown {
+		width: 100%;
+		margin-bottom: 1rem;
+		position: relative;
+
+		#filterToggle {
+			padding: 0.6rem 1.2rem;
+			background-color: #8b4513;
+			color: white;
+			border: none;
+			cursor: pointer;
+			border-radius: 4px;
+		}
+
+		#filterList {
+			display: none;
+			position: absolute;
+			top: 110%;
+			left: 0;
+			z-index: 10;
+			background: colors.$white;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			list-style: none;
+			padding: 0.5rem 0;
+			width: 220px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+			li {
+				button {
+					width: 100%;
+					text-align: left;
+					padding: 0.5rem 1rem;
+					border: none;
+					background: none;
+					cursor: pointer;
+
+					&:hover,
+					&.active {
+						background-color: colors.$main; //#8b4513;
+						color: white;
+					}
+				}
+			}
+		}
+
+		&.open #filterList {
+			display: block;
+		}
+	}
+
+	.gallery {
+		flex: 1 1 100%;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2em;
+		&-item {
+			text-align: center;
+			&-title {
+				font-size: 2rem;
+			}
+		}
+
+		.gallery-item {
+			img {
+				width: 100%;
+				max-width: 300px;
+				aspect-ratio: 1 / 1;
+				border-radius: 6px;
+				box-shadow: 0 4px 10px colors.$grey; //rgba(255, 255, 255, 0.473);
+				transition: transform 0.3s;
+
+				&:hover {
+					transform: scale(1.03);
+				}
+			}
+		}
+	}
+
+	// 🔁 Od 768px – zamiana dropdownu na panel boczny
+	@media (min-width: 768px) {
+		flex-wrap: nowrap;
+
+		.filter-dropdown {
+			flex: 1 1 200px;
+			margin-bottom: 0;
+
+			#filterToggle {
+				display: none;
+			}
+
+			#filterList {
+				display: block;
+				position: static;
+				border: none;
+				box-shadow: none;
+				width: auto;
+			}
+		}
+
+		.gallery {
+			flex: 3 1 600px;
+		}
+	}
+}

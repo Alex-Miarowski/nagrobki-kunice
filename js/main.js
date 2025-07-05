@@ -38,7 +38,7 @@ const checkSubpage = () => {
 			window.addEventListener('scroll', scrollSpyHandle)
 			window.addEventListener('resize', setW)
 			setW()
-		} else if (window.location.pathname.includes('/test.html')) {
+		} else if (window.location.pathname.includes('/galery.html')) {
 			window.removeEventListener('scroll', scrollSpyHandle)
 			activeClassReset()
 			allNavDesktopItems[2].classList.add('nav__item-desktop--active')
@@ -116,5 +116,44 @@ const setW = () => {
 	document.querySelector('.offer__cards-assortment').style.width = res + 'px'
 	//console.log(maxWidth + 'px; W: ' + calculatedWidth)
 }
+
+const toggleBtn = document.getElementById('filterToggle')
+const filterList = document.getElementById('filterList')
+const dropdown = document.querySelector('.filter-dropdown')
+const buttons = filterList.querySelectorAll('button')
+const items = document.querySelectorAll('.gallery-item')
+
+toggleBtn.addEventListener('click', () => {
+	dropdown.classList.toggle('open')
+})
+
+buttons.forEach(button => {
+	button.addEventListener('click', () => {
+		// Zmień aktywny przycisk
+		buttons.forEach(btn => btn.classList.remove('active'))
+		button.classList.add('active')
+
+		const filter = button.getAttribute('data-filter')
+
+		// Filtrowanie obrazków
+		items.forEach(item => {
+			if (filter === 'all' || item.classList.contains(filter)) {
+				item.style.display = 'block'
+			} else {
+				item.style.display = 'none'
+			}
+		})
+
+		// Zamknij dropdown po wyborze
+		dropdown.classList.remove('open')
+	})
+})
+
+// Zamknij dropdown po kliknięciu poza nim
+document.addEventListener('click', e => {
+	if (!dropdown.contains(e.target)) {
+		dropdown.classList.remove('open')
+	}
+})
 
 document.addEventListener('DOMContentLoaded', main)
