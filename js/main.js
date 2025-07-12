@@ -63,6 +63,8 @@ const checkSubpage = () => {
 			window.addEventListener('resize', setW)
 			setW()
 		}
+	} else if (window.location.pathname.includes('/galery.html')) {
+		f_it()
 	}
 }
 
