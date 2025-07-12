@@ -33,38 +33,43 @@ const prepareDOMEvents = () => {
 }
 
 const checkSubpage = () => {
-	if (window.innerWidth >= 992) {
-		if (window.location.pathname.includes('/galery.html')) {
+	const isGalleryPage = window.location.pathname.includes('/galery.html')
+	const isMainPage = window.location.pathname.includes('/nagrobki-kunice/')
+
+	if (isGalleryPage) {
+		f_it()
+
+		// Wspólna część dla desktop i mobile — odczyt parametru i filtracja
+		const queryString = window.location.search
+		const urlParams = new URLSearchParams(queryString)
+		const urlFilter = urlParams.get('data-filter')
+
+		if (urlFilter) {
+			const buttons = document.querySelectorAll('#filterList button')
+			const items = document.querySelectorAll('.gallery-item')
+			buttons.forEach(btn => btn.classList.remove('active'))
+			const activeBtn = document.querySelector(`#filterList button[data-filter="${urlFilter}"]`)
+			if (activeBtn) activeBtn.classList.add('active')
+			if (urlFilter === 'all') {
+				items.forEach(item => (item.style.display = 'block'))
+			} else {
+				items.forEach(item => {
+					item.style.display = item.classList.contains(urlFilter) ? 'block' : 'none'
+				})
+			}
+		}
+
+		if (window.innerWidth >= 992) {
 			window.removeEventListener('scroll', scrollSpyHandle)
 			activeClassReset()
 			allNavDesktopItems[2].classList.add('nav__item-desktop--active')
-			f_it()
-			const queryString = window.location.search
-			const urlParams = new URLSearchParams(queryString)
-			const urlFilter = urlParams.get('data-filter')
-
-			if (urlFilter) {
-				const buttons = document.querySelectorAll('#filterList button')
-				const items = document.querySelectorAll('.gallery-item')
-				buttons.forEach(btn => btn.classList.remove('active'))
-				const activeBtn = document.querySelector(`#filterList button[data-filter="${urlFilter}"]`)
-				if (activeBtn) activeBtn.classList.add('active')
-				if (urlFilter === 'all') {
-					items.forEach(item => (item.style.display = 'block'))
-				} else {
-					items.forEach(item => {
-						item.style.display = item.classList.contains(urlFilter) ? 'block' : 'none'
-					})
-				}
-			}
-		} else if (window.location.pathname.includes('/nagrobki-kunice/')) {
-			//|| window.location.pathname === '/') {
+		}
+	} else if (isMainPage) {
+		if (window.innerWidth >= 992) {
 			window.addEventListener('scroll', scrollSpyHandle)
 			window.addEventListener('resize', setW)
 			setW()
 		}
-	} else if (window.location.pathname.includes('/galery.html')) {
-		f_it()
 	}
 }
 
