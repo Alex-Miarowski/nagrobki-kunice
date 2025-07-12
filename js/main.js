@@ -39,6 +39,24 @@ const checkSubpage = () => {
 			activeClassReset()
 			allNavDesktopItems[2].classList.add('nav__item-desktop--active')
 			f_it()
+			const queryString = window.location.search
+			const urlParams = new URLSearchParams(queryString)
+			const urlFilter = urlParams.get('data-filter')
+
+			if (urlFilter) {
+				const buttons = document.querySelectorAll('#filterList button')
+				const items = document.querySelectorAll('.gallery-item')
+				buttons.forEach(btn => btn.classList.remove('active'))
+				const activeBtn = document.querySelector(`#filterList button[data-filter="${urlFilter}"]`)
+				if (activeBtn) activeBtn.classList.add('active')
+				if (urlFilter === 'all') {
+					items.forEach(item => (item.style.display = 'block'))
+				} else {
+					items.forEach(item => {
+						item.style.display = item.classList.contains(urlFilter) ? 'block' : 'none'
+					})
+				}
+			}
 		} else if (window.location.pathname.includes('/nagrobki-kunice/')) {
 			//|| window.location.pathname === '/') {
 			window.addEventListener('scroll', scrollSpyHandle)
