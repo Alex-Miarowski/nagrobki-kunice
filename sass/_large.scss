@@ -74,6 +74,18 @@
 		}
 	}
 
+	.gallery-wrapper {
+		.filter-dropdown {
+			#filterList {
+				li {
+					button {
+						font-size: 1.5rem;
+					}
+				}
+			}
+		}
+	}
+
 	.contact {
 		&__text {
 			font-size: 1.8rem;

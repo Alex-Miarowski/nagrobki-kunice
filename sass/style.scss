@@ -290,7 +290,10 @@ body {
 			color: colors.$white;
 			border: 1px solid colors.$white;
 			background: none;
-			transition: color 0.3s, border-color 0.3s, box-shadow 0.3s;
+			transition:
+				color 0.3s,
+				border-color 0.3s,
+				box-shadow 0.3s;
 
 			&:hover {
 				color: colors.$main;
@@ -340,25 +343,26 @@ body {
 	}
 }
 
-@import './small';
-@import './medium';
-@import './large';
-@import './xlarge';
+// @import './small';
+// @import './medium';
+// @import './large';
+// @import './xlarge';
 
 .gallery-wrapper {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 	gap: 2rem;
-	padding: 2rem;
+	padding: 6rem 2rem;
 	max-width: 1200px;
 	min-height: 500px;
 
 	.filter-dropdown {
 		width: 100%;
-		max-width: 220px;
+		// max-width: 220px;
 		margin-bottom: 1rem;
 		position: relative;
+		// font-size: 1.5rem;
 
 		#filterToggle {
 			padding: 0.6rem 1.2rem;
@@ -391,6 +395,7 @@ body {
 					border: none;
 					background: none;
 					cursor: pointer;
+					// font-size: 1.5rem;
 
 					&:hover,
 					&.active {
@@ -423,12 +428,14 @@ body {
 				width: 100%;
 				max-width: 285px;
 				aspect-ratio: 1 / 1;
-				border-radius: 6px;
+				// border-radius: 6px;
 				box-shadow: 0 0 8px colors.$grey; //rgba(255, 255, 255, 0.473);
-				transition: transform 0.3s;
+				transition: box-shadow 0.3s;
 
 				&:hover {
-					transform: scale(1.03);
+					// transform: scale(1.03);
+					box-shadow: 0 0 20px colors.$main;
+					cursor: pointer;
 				}
 			}
 
@@ -439,28 +446,38 @@ body {
 	}
 
 	// 🔁 Od 768px – zamiana dropdownu na panel boczny
-	@media (min-width: 768px) {
-		flex-wrap: nowrap;
+	// @media (min-width: 768px) {
+	// 	flex-wrap: nowrap;
 
-		.filter-dropdown {
-			flex: 1 1 200px;
-			margin-bottom: 0;
+	// 	.filter-dropdown {
+	// 		flex: 1 1 200px;
+	// 		margin-bottom: 0;
 
-			#filterToggle {
-				display: none;
-			}
+	// 		#filterToggle {
+	// 			display: none;
+	// 		}
 
-			#filterList {
-				display: block;
-				position: static;
-				border: none;
-				box-shadow: none;
-				width: auto;
-			}
-		}
+	// 		#filterList {
+	// 			display: block;
+	// 			position: static;
+	// 			border: none;
+	// 			box-shadow: none;
+	// 			width: auto;
+	// 			max-width: 220px;
+	// 		}
+	// 	}
 
-		.gallery {
-			flex: 3 1 600px;
-		}
-	}
+	// 	.gallery {
+	// 		flex: 3 1 600px;
+	// 	}
+	// }
 }
+
+.hidden {
+	display: none;
+}
+
+@import './small';
+@import './medium';
+@import './large';
+@import './xlarge';

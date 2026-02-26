@@ -6,6 +6,74 @@ let navBurgerIcon
 let allNavMobileItems
 let allNavDesktopItems
 let sections
+let GALLERY_ITEMS = [
+	{
+		title: 'Nagrobek pojedynczy #1',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek podwójny #1',
+		category: 'podwojne',
+		imgSrc: './img/offer/podwojny.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek urnowy #1',
+		category: 'urnowe',
+		imgSrc: './img/offer/urnowy.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek dziecięcy #1',
+		category: 'dzieciece',
+		imgSrc: './img/offer/dzieciecy.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Wazon #1',
+		category: 'wazony',
+		imgSrc: './img/offer/wazon.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Misa #1',
+		category: 'misy',
+		imgSrc: './img/offer/misa.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Książka #1',
+		category: 'ksiazki',
+		imgSrc: './img/offer/ksiazka.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Tabliczka #1',
+		category: 'tabliczki',
+		imgSrc: './img/offer/tabliczka.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Litery #1',
+		category: 'litery',
+		imgSrc: './img/offer/litery.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Krzyż #1',
+		category: 'krzyze',
+		imgSrc: './img/offer/krzyze.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Lampion #1',
+		category: 'lampiony',
+		imgSrc: './img/offer/lampion.webp',
+		imgAlt: 'alt',
+	},
+]
 
 const main = () => {
 	prepareDOMElements()
@@ -37,7 +105,8 @@ const checkSubpage = () => {
 	const isMainPage = window.location.pathname.includes('/index.html')
 
 	if (isGalleryPage) {
-		f_it()
+		createGalleryItems()
+		handleFilter()
 
 		// Wspólna część dla desktop i mobile — odczyt parametru i filtracja
 		const queryString = window.location.search
@@ -71,6 +140,29 @@ const checkSubpage = () => {
 			setW()
 		}
 	}
+}
+
+const createGalleryItems = () => {
+	const galleryContainer = document.querySelector('.gallery')
+	GALLERY_ITEMS.forEach(item => {
+		const div = document.createElement('div')
+		const img = document.createElement('img')
+		const p = document.createElement('p')
+		div.classList.add('gallery-item', item.category)
+		p.classList.add('gallery-item-title')
+		img.src = item.imgSrc
+		img.alt = item.imgAlt
+		p.textContent = item.title
+		div.append(img, p)
+		galleryContainer.appendChild(div)
+		div.addEventListener('click', () => {
+			handleGalleryItemClick(div)
+		})
+	})
+}
+
+const handleGalleryItemClick = clickedItem => {
+	console.log(clickedItem)
 }
 
 const handleBurgerBtnClick = () => {
@@ -144,7 +236,7 @@ const setW = () => {
 	//console.log(maxWidth + 'px; W: ' + calculatedWidth)
 }
 
-const f_it = () => {
+const handleFilter = () => {
 	const toggleBtn = document.getElementById('filterToggle')
 	const filterList = document.getElementById('filterList')
 	const dropdown = document.querySelector('.filter-dropdown')
@@ -166,9 +258,9 @@ const f_it = () => {
 			// Filtrowanie obrazków
 			items.forEach(item => {
 				if (filter === 'all' || item.classList.contains(filter)) {
-					item.style.display = 'block'
+					item.classList.remove('hidden')
 				} else {
-					item.style.display = 'none'
+					item.classList.add('hidden')
 				}
 			})
 

@@ -329,132 +329,17 @@ body {
   font-weight: bold;
 }
 
-@media (min-width: 576px) {
-  .section__heading {
-    font-size: 4rem;
-  }
-  .nav__item-mobile {
-    font-size: 2.4rem;
-  }
-  .header__text {
-    font-size: 2rem;
-  }
-  .header__text-heading {
-    font-size: 4rem;
-  }
-  .header__text-first {
-    font-size: 3.2rem;
-  }
-  .offer__cards-heading {
-    font-size: 3rem;
-  }
-  .offer__card-img {
-    min-width: 300px;
-  }
-  .offer__card-title {
-    font-size: 2.2rem;
-  }
-  .offer__card-link {
-    font-size: 1.8rem;
-  }
-}
-@media (min-width: 768px) {
-  .nav__logo {
-    margin: 0.4em 1em;
-    height: 80px;
-  }
-  .section {
-    padding: 3.4em 2.4em;
-    scroll-margin-top: 86px;
-  }
-  .header {
-    background-image: url("../img/heros/hero_medium.webp");
-  }
-  .offer__cards-gravestones, .offer__cards-assortment {
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 60px;
-  }
-  .offer__cards__card {
-    padding: 0em 1.6em;
-  }
-}
-@media (min-width: 992px) {
-  .nav__burger-btn {
-    display: none;
-  }
-  .nav__items-mobile {
-    display: none;
-  }
-  .nav__items-desktop {
-    display: flex;
-  }
-  .nav__item-desktop {
-    position: relative;
-    padding: 0.6em;
-    margin: 0.2em;
-    font-size: 2.2rem;
-    color: #000000;
-  }
-  .nav__item-desktop:hover, .nav__item-desktop--active {
-    color: #a36a00;
-  }
-  .nav__item-desktop::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    width: 100%;
-    background-color: #a36a00;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s;
-  }
-  .nav__item-desktop:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-  .section__heading {
-    font-size: 4rem;
-  }
-  .section__heading-text {
-    font-size: 2.2rem;
-  }
-  .header > .wrapper {
-    max-width: 900px;
-  }
-  .header__text {
-    font-size: 2.2rem;
-  }
-  .header__text-heading {
-    font-size: 4.4rem;
-  }
-  .header__text-first {
-    font-size: 3.6rem;
-  }
-  .contact__text {
-    font-size: 1.8rem;
-  }
-}
-@media (min-width: 1200px) {
-  .header {
-    background-image: url("../img/heros/hero_big.webp");
-  }
-}
 .gallery-wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: 2rem;
+  padding: 6rem 2rem;
   max-width: 1200px;
   min-height: 500px;
 }
 .gallery-wrapper .filter-dropdown {
   width: 100%;
-  max-width: 220px;
   margin-bottom: 1rem;
   position: relative;
 }
@@ -511,17 +396,71 @@ body {
   width: 100%;
   max-width: 285px;
   aspect-ratio: 1/1;
-  border-radius: 6px;
   box-shadow: 0 0 8px #d4d4d4;
-  transition: transform 0.3s;
+  transition: box-shadow 0.3s;
 }
 .gallery-wrapper .gallery-item img:hover {
-  transform: scale(1.03);
+  box-shadow: 0 0 20px #978262;
+  cursor: pointer;
 }
 .gallery-wrapper .gallery-item-title {
   margin-top: 0.3rem;
 }
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .section__heading {
+    font-size: 4rem;
+  }
+  .nav__item-mobile {
+    font-size: 2.4rem;
+  }
+  .header__text {
+    font-size: 2rem;
+  }
+  .header__text-heading {
+    font-size: 4rem;
+  }
+  .header__text-first {
+    font-size: 3.2rem;
+  }
+  .offer__cards-heading {
+    font-size: 3rem;
+  }
+  .offer__card-img {
+    min-width: 300px;
+  }
+  .offer__card-title {
+    font-size: 2.2rem;
+  }
+  .offer__card-link {
+    font-size: 1.8rem;
+  }
+}
 @media (min-width: 768px) {
+  .nav__logo {
+    margin: 0.4em 1em;
+    height: 80px;
+  }
+  .section {
+    padding: 3.4em 2.4em;
+    scroll-margin-top: 86px;
+  }
+  .header {
+    background-image: url("../img/heros/hero_medium.webp");
+  }
+  .offer__cards-gravestones, .offer__cards-assortment {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 60px;
+  }
+  .offer__cards__card {
+    padding: 0em 1.6em;
+  }
   .gallery-wrapper {
     flex-wrap: nowrap;
   }
@@ -538,8 +477,75 @@ body {
     border: none;
     box-shadow: none;
     width: auto;
+    max-width: 220px;
   }
   .gallery-wrapper .gallery {
     flex: 3 1 600px;
+  }
+}
+@media (min-width: 992px) {
+  .nav__burger-btn {
+    display: none;
+  }
+  .nav__items-mobile {
+    display: none;
+  }
+  .nav__items-desktop {
+    display: flex;
+  }
+  .nav__item-desktop {
+    position: relative;
+    padding: 0.6em;
+    margin: 0.2em;
+    font-size: 2.2rem;
+    color: #000000;
+  }
+  .nav__item-desktop:hover, .nav__item-desktop--active {
+    color: #a36a00;
+  }
+  .nav__item-desktop::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #a36a00;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+  }
+  .nav__item-desktop:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  .section__heading {
+    font-size: 4rem;
+  }
+  .section__heading-text {
+    font-size: 2.2rem;
+  }
+  .header > .wrapper {
+    max-width: 900px;
+  }
+  .header__text {
+    font-size: 2.2rem;
+  }
+  .header__text-heading {
+    font-size: 4.4rem;
+  }
+  .header__text-first {
+    font-size: 3.6rem;
+  }
+  .gallery-wrapper .filter-dropdown #filterList li button {
+    font-size: 1.5rem;
+  }
+  .contact__text {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 1200px) {
+  .header {
+    background-image: url("../img/heros/hero_big.webp");
   }
 }/*# sourceMappingURL=style.css.map */

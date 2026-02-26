@@ -30,4 +30,30 @@
 			}
 		}
 	}
+
+	.gallery-wrapper {
+		flex-wrap: nowrap;
+
+		.filter-dropdown {
+			flex: 1 1 200px;
+			margin-bottom: 0;
+
+			#filterToggle {
+				display: none;
+			}
+
+			#filterList {
+				display: block;
+				position: static;
+				border: none;
+				box-shadow: none;
+				width: auto;
+				max-width: 220px;
+			}
+		}
+
+		.gallery {
+			flex: 3 1 600px;
+		}
+	}
 }
