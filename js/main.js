@@ -34,7 +34,7 @@ const prepareDOMEvents = () => {
 
 const checkSubpage = () => {
 	const isGalleryPage = window.location.pathname.includes('/galery.html')
-	const isMainPage = window.location.pathname.includes('/nagrobki-kunice/')
+	const isMainPage = window.location.pathname.includes('/index.html')
 
 	if (isGalleryPage) {
 		f_it()
