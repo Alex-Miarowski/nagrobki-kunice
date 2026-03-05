@@ -406,9 +406,31 @@ body {
 .gallery-wrapper .gallery-item-title {
   margin-top: 0.3rem;
 }
+.gallery-wrapper .gallery .lightbox {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.gallery-wrapper .gallery .lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+.gallery-wrapper .gallery .lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 @media (min-width: 576px) {

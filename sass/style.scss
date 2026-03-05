@@ -443,6 +443,31 @@ body {
 				margin-top: 0.3rem;
 			}
 		}
+
+		.lightbox {
+			display: flex;
+			position: fixed;
+			inset: 0;
+			background: rgba(0, 0, 0, 0.85);
+			justify-content: center;
+			align-items: center;
+			z-index: 9999;
+
+			img {
+				max-width: 90%;
+				max-height: 90%;
+				border-radius: 10px;
+			}
+
+			.close {
+				position: absolute;
+				top: 20px;
+				right: 30px;
+				font-size: 30px;
+				color: white;
+				cursor: pointer;
+			}
+		}
 	}
 
 	// 🔁 Od 768px – zamiana dropdownu na panel boczny
@@ -474,7 +499,7 @@ body {
 }
 
 .hidden {
-	display: none;
+	display: none !important;
 }
 
 @import './small';

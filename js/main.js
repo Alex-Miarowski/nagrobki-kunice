@@ -6,11 +6,153 @@ let navBurgerIcon
 let allNavMobileItems
 let allNavDesktopItems
 let sections
+let lightboxDiv
+let lightboxImg
+let imageBtnClose
+let x
 let GALLERY_ITEMS = [
 	{
 		title: 'Nagrobek pojedynczy #1',
 		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy.webp',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_1_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #2',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_2_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #3',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_3_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #4',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_4_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #5',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_5_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #6',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_6_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #7',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_7_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #8',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_8_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #9',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_9_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #10',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_10_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #11',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_11_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #12',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_12_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #13',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_13_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #14',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_14_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #15',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_15_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #16',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_16_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #17',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_17_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #18',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_18_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #19',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_19_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #20',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_20_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #21',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_21_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #22',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_22_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #23',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_23_small.webp',
+		imgAlt: 'alt',
+	},
+	{
+		title: 'Nagrobek pojedynczy #24',
+		category: 'pojedyncze',
+		imgSrc: './img/offer/pojedynczy/pojedynczy_24_small.webp',
 		imgAlt: 'alt',
 	},
 	{
@@ -89,10 +231,14 @@ const prepareDOMElements = () => {
 	allNavMobileItems = document.querySelectorAll('.nav__item-mobile')
 	allNavDesktopItems = document.querySelectorAll('.nav__item-desktop')
 	sections = document.querySelectorAll('.section')
+	lightboxDiv = document.querySelector('.lightbox')
+	lightboxImg = document.querySelector('.lightbox-img')
+	imageBtnClose = document.querySelector('.imageBtnClose')
 }
 
 const prepareDOMEvents = () => {
 	navBurgerBtn.addEventListener('click', handleBurgerBtnClick)
+
 	handleNavMobileItemClick()
 	checkScrollSpy()
 	//window.addEventListener('resize', checkScrollSpy)
@@ -107,6 +253,7 @@ const checkSubpage = () => {
 	if (isGalleryPage) {
 		createGalleryItems()
 		handleFilter()
+		imageBtnClose.addEventListener('click', handleImageBtnClose)
 
 		// Wspólna część dla desktop i mobile — odczyt parametru i filtracja
 		const queryString = window.location.search
@@ -123,7 +270,7 @@ const checkSubpage = () => {
 				items.forEach(item => (item.style.display = 'block'))
 			} else {
 				items.forEach(item => {
-					item.style.display = item.classList.contains(urlFilter) ? 'block' : 'none'
+					item.classList.toggle('hidden', !item.classList.contains(urlFilter))
 				})
 			}
 		}
@@ -162,7 +309,22 @@ const createGalleryItems = () => {
 }
 
 const handleGalleryItemClick = clickedItem => {
-	console.log(clickedItem)
+	// console.log(clickedItem)
+	x = clickedItem
+	// lightboxDiv.classList.add('lightbox-open')
+	lightboxDiv.classList.remove('hidden')
+	let fileName = clickedItem.childNodes[0].src.split('/').pop().replace('_small', '')
+	let fileFolder = fileName.split('_')[0]
+	let imgUrl = `./img/offer/${fileFolder}/${fileName}`
+	lightboxImg.src = imgUrl
+	// console.log(imgUrl)
+}
+
+const handleImageBtnClose = () => {
+	// imageBtnClose.addEventListener('click', () => {
+	// 	lightboxDiv.classList.toggle('hidden')
+	// })
+	lightboxDiv.classList.toggle('hidden')
 }
 
 const handleBurgerBtnClick = () => {
