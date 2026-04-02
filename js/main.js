@@ -10,217 +10,13 @@ let lightboxDiv
 let lightboxImg
 let imageBtnClose
 let x
-let GALLERY_ITEMS = [
-	{
-		title: 'Nagrobek pojedynczy #1',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_1_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #2',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_2_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #3',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_3_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #4',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_4_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #5',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_5_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #6',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_6_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #7',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_7_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #8',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_8_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #9',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_9_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #10',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_10_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #11',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_11_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #12',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_12_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #13',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_13_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #14',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_14_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #15',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_15_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #16',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_16_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #17',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_17_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #18',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_18_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #19',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_19_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #20',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_20_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #21',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_21_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #22',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_22_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #23',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_23_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek pojedynczy #24',
-		category: 'pojedyncze',
-		imgSrc: './img/offer/pojedynczy/pojedynczy_24_small.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek podwójny #1',
-		category: 'podwojne',
-		imgSrc: './img/offer/podwojny.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek urnowy #1',
-		category: 'urnowe',
-		imgSrc: './img/offer/urnowy.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Nagrobek dziecięcy #1',
-		category: 'dzieciece',
-		imgSrc: './img/offer/dzieciecy.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Wazon #1',
-		category: 'wazony',
-		imgSrc: './img/offer/wazon.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Misa #1',
-		category: 'misy',
-		imgSrc: './img/offer/misa.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Książka #1',
-		category: 'ksiazki',
-		imgSrc: './img/offer/ksiazka.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Tabliczka #1',
-		category: 'tabliczki',
-		imgSrc: './img/offer/tabliczka.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Litery #1',
-		category: 'litery',
-		imgSrc: './img/offer/litery.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Krzyż #1',
-		category: 'krzyze',
-		imgSrc: './img/offer/krzyze.webp',
-		imgAlt: 'alt',
-	},
-	{
-		title: 'Lampion #1',
-		category: 'lampiony',
-		imgSrc: './img/offer/lampion.webp',
-		imgAlt: 'alt',
-	},
-]
+let GALLERY_ITEMS = []
 
 const main = () => {
+	fetchGalleryItems()
 	prepareDOMElements()
 	prepareDOMEvents()
-	checkSubpage()
+	//checkSubpage()
 }
 
 const prepareDOMElements = () => {
@@ -244,6 +40,16 @@ const prepareDOMEvents = () => {
 	//window.addEventListener('resize', checkScrollSpy)
 	// window.addEventListener('resize', setW)
 	// setW()
+}
+
+const fetchGalleryItems = () => {
+	fetch('./js/gallery_items.json')
+		.then(res => res.json())
+		.then(data => {
+			GALLERY_ITEMS = data
+			checkSubpage()
+		})
+		.catch(err => console.error(err))
 }
 
 const checkSubpage = () => {
@@ -313,7 +119,7 @@ const handleGalleryItemClick = clickedItem => {
 	x = clickedItem
 	// lightboxDiv.classList.add('lightbox-open')
 	lightboxDiv.classList.remove('hidden')
-	let fileName = clickedItem.childNodes[0].src.split('/').pop().replace('_small', '')
+	let fileName = clickedItem.childNodes[0].src.split('/').pop().replace('_medium', '')
 	let fileFolder = fileName.split('_')[0]
 	let imgUrl = `./img/offer/${fileFolder}/${fileName}`
 	lightboxImg.src = imgUrl

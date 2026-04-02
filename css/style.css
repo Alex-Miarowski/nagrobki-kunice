@@ -425,8 +425,32 @@ body {
   top: 20px;
   right: 30px;
   font-size: 30px;
-  color: white;
+  color: #cecac3;
   cursor: pointer;
+}
+.gallery-wrapper .gallery .lightbox .changeImgBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #cecac3;
+  cursor: pointer;
+  padding: 5px 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  transition: 0.2s;
+}
+.gallery-wrapper .gallery .lightbox .changeImgBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.gallery-wrapper .gallery .lightbox .prevImgBtn {
+  left: 20px;
+}
+.gallery-wrapper .gallery .lightbox .nextImgBtn {
+  right: 20px;
 }
 
 .hidden {
@@ -460,6 +484,10 @@ body {
   }
   .offer__card-link {
     font-size: 1.8rem;
+  }
+  .gallery-wrapper .gallery .lightbox .changeImgBtn {
+    padding: 10px 20px;
+    font-size: 30px;
   }
 }
 @media (min-width: 768px) {
@@ -564,10 +592,5 @@ body {
   }
   .contact__text {
     font-size: 1.8rem;
-  }
-}
-@media (min-width: 1200px) {
-  .header {
-    background-image: url("../img/heros/hero_big.webp");
   }
 }/*# sourceMappingURL=style.css.map */
