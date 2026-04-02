@@ -344,12 +344,14 @@ body {
   position: relative;
 }
 .gallery-wrapper .filter-dropdown #filterToggle {
-  padding: 0.6rem 1.2rem;
+  padding: 0.8rem 1.2rem;
+  min-width: 80px;
   background-color: #8b4513;
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 4px;
+  font-size: 1.5rem;
 }
 .gallery-wrapper .filter-dropdown #filterList {
   display: none;
