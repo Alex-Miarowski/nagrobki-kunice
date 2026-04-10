@@ -9,14 +9,19 @@ let sections
 let lightboxDiv
 let lightboxImg
 let imageBtnClose
+let changeImgBtns
+let prevImgBtn
+let nextImgBtn
 let x
 let GALLERY_ITEMS = []
+let galleryItemIndex = -1
+let currentImgIndex = 0
+let amountOfItemImgs
 
 const main = () => {
 	fetchGalleryItems()
 	prepareDOMElements()
 	prepareDOMEvents()
-	//checkSubpage()
 }
 
 const prepareDOMElements = () => {
@@ -30,16 +35,18 @@ const prepareDOMElements = () => {
 	lightboxDiv = document.querySelector('.lightbox')
 	lightboxImg = document.querySelector('.lightbox-img')
 	imageBtnClose = document.querySelector('.imageBtnClose')
+	changeImgBtns = document.querySelectorAll('.changeImgBtns')
+	prevImgBtn = document.querySelector('#prevImgBtn')
+	nextImgBtn = document.querySelector('#nextImgBtn')
 }
 
 const prepareDOMEvents = () => {
 	navBurgerBtn.addEventListener('click', handleBurgerBtnClick)
+	prevImgBtn.addEventListener('click', handlePrevImgBtnClick)
+	nextImgBtn.addEventListener('click', handleNextImgBtnClick)
 
 	handleNavMobileItemClick()
 	checkScrollSpy()
-	//window.addEventListener('resize', checkScrollSpy)
-	// window.addEventListener('resize', setW)
-	// setW()
 }
 
 const fetchGalleryItems = () => {
@@ -61,7 +68,6 @@ const checkSubpage = () => {
 		handleFilter()
 		imageBtnClose.addEventListener('click', handleImageBtnClose)
 
-		// Wspólna część dla desktop i mobile — odczyt parametru i filtracja
 		const queryString = window.location.search
 		const urlParams = new URLSearchParams(queryString)
 		const urlFilter = urlParams.get('data-filter')
@@ -115,21 +121,39 @@ const createGalleryItems = () => {
 }
 
 const handleGalleryItemClick = clickedItem => {
-	// console.log(clickedItem)
-	x = clickedItem
-	// lightboxDiv.classList.add('lightbox-open')
 	lightboxDiv.classList.remove('hidden')
 	let fileName = clickedItem.childNodes[0].src.split('/').pop().replace('_medium', '')
 	let fileFolder = fileName.split('_')[0]
-	let imgUrl = `./img/offer/${fileFolder}/${fileName}`
-	lightboxImg.src = imgUrl
-	// console.log(imgUrl)
+
+	if (fileFolder === 'ksiazka') {
+		currentImgIndex = 0
+		galleryItemIndex = GALLERY_ITEMS.findIndex(el => el.title === clickedItem.childNodes[1].textContent)
+		lightboxImg.src = GALLERY_ITEMS[galleryItemIndex].imgSrcTab[0]
+		amountOfItemImgs = GALLERY_ITEMS[galleryItemIndex].imgSrcTab.length
+
+		changeImgBtns.forEach(btn => {
+			btn.classList.remove('hidden')
+		})
+	} else {
+		changeImgBtns.forEach(btn => {
+			btn.classList.add('hidden')
+		})
+		let imgUrl = `./img/offer/${fileFolder}/${fileName}`
+		lightboxImg.src = imgUrl
+	}
+}
+
+const handlePrevImgBtnClick = () => {
+	currentImgIndex != 0 ? currentImgIndex-- : currentImgIndex
+	lightboxImg.src = GALLERY_ITEMS[galleryItemIndex].imgSrcTab[currentImgIndex]
+}
+
+const handleNextImgBtnClick = () => {
+	currentImgIndex < amountOfItemImgs - 1 ? currentImgIndex++ : currentImgIndex
+	lightboxImg.src = GALLERY_ITEMS[galleryItemIndex].imgSrcTab[currentImgIndex]
 }
 
 const handleImageBtnClose = () => {
-	// imageBtnClose.addEventListener('click', () => {
-	// 	lightboxDiv.classList.toggle('hidden')
-	// })
 	lightboxDiv.classList.toggle('hidden')
 }
 
@@ -201,7 +225,6 @@ const setW = () => {
 	}
 	document.querySelector('.offer__cards-gravestones').style.width = res + 'px'
 	document.querySelector('.offer__cards-assortment').style.width = res + 'px'
-	//console.log(maxWidth + 'px; W: ' + calculatedWidth)
 }
 
 const handleFilter = () => {
@@ -217,13 +240,11 @@ const handleFilter = () => {
 
 	buttons.forEach(button => {
 		button.addEventListener('click', () => {
-			// Zmień aktywny przycisk
 			buttons.forEach(btn => btn.classList.remove('active'))
 			button.classList.add('active')
 
 			const filter = button.getAttribute('data-filter')
 
-			// Filtrowanie obrazków
 			items.forEach(item => {
 				if (filter === 'all' || item.classList.contains(filter)) {
 					item.classList.remove('hidden')
@@ -232,12 +253,10 @@ const handleFilter = () => {
 				}
 			})
 
-			// Zamknij dropdown po wyborze
 			dropdown.classList.remove('open')
 		})
 	})
 
-	// Zamknij dropdown po kliknięciu poza nim
 	document.addEventListener('click', e => {
 		if (!dropdown.contains(e.target)) {
 			dropdown.classList.remove('open')
