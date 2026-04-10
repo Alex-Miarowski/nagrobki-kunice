@@ -180,9 +180,99 @@
 		"imgAlt": "alt"
 	},
 	{
+		"title": "Nagrobek pojedynczy #31",
+		"category": "pojedyncze",
+		"imgSrc": "./img/offer/pojedynczy/pojedynczy_31_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Nagrobek pojedynczy #32",
+		"category": "pojedyncze",
+		"imgSrc": "./img/offer/pojedynczy/pojedynczy_32_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Nagrobek pojedynczy #33",
+		"category": "pojedyncze",
+		"imgSrc": "./img/offer/pojedynczy/pojedynczy_33_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Nagrobek pojedynczy #34",
+		"category": "pojedyncze",
+		"imgSrc": "./img/offer/pojedynczy/pojedynczy_34_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Nagrobek pojedynczy #35",
+		"category": "pojedyncze",
+		"imgSrc": "./img/offer/pojedynczy/pojedynczy_35_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Nagrobek pojedynczy #36",
+		"category": "pojedyncze",
+		"imgSrc": "./img/offer/pojedynczy/pojedynczy_36_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Nagrobek pojedynczy #37",
+		"category": "pojedyncze",
+		"imgSrc": "./img/offer/pojedynczy/pojedynczy_37_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Nagrobek pojedynczy #38",
+		"category": "pojedyncze",
+		"imgSrc": "./img/offer/pojedynczy/pojedynczy_38_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Nagrobek pojedynczy #39",
+		"category": "pojedyncze",
+		"imgSrc": "./img/offer/pojedynczy/pojedynczy_39_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
 		"title": "Nagrobek dziecięcy #1",
 		"category": "dzieciece",
 		"imgSrc": "./img/offer/dzieciecy/dzieciecy_1_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Nagrobek dziecięcy #2",
+		"category": "dzieciece",
+		"imgSrc": "./img/offer/dzieciecy/dzieciecy_2_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Nagrobek dziecięcy #3",
+		"category": "dzieciece",
+		"imgSrc": "./img/offer/dzieciecy/dzieciecy_3_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Nagrobek dziecięcy #4",
+		"category": "dzieciece",
+		"imgSrc": "./img/offer/dzieciecy/dzieciecy_4_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Nagrobek dziecięcy #5",
+		"category": "dzieciece",
+		"imgSrc": "./img/offer/dzieciecy/dzieciecy_5_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Nagrobek dziecięcy #6",
+		"category": "dzieciece",
+		"imgSrc": "./img/offer/dzieciecy/dzieciecy_6_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Nagrobek dziecięcy #7",
+		"category": "dzieciece",
+		"imgSrc": "./img/offer/dzieciecy/dzieciecy_7_medium.webp",
 		"imgAlt": "alt"
 	},
 	{
@@ -222,6 +312,55 @@
 		],
 		"imgAlt": "alt"
 	},
+	{
+		"title": "Lampion #1",
+		"category": "akcesoria",
+		"imgSrc": "./img/offer/akcesoria/lampion_1_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Litery #1",
+		"category": "akcesoria",
+		"imgSrc": "./img/offer/akcesoria/litery_1_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Poduszka #1",
+		"category": "akcesoria",
+		"imgSrc": "./img/offer/akcesoria/poduszka_1_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Poduszka #2",
+		"category": "akcesoria",
+		"imgSrc": "./img/offer/akcesoria/poduszka_2_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Poduszka #3",
+		"category": "akcesoria",
+		"imgSrc": "./img/offer/akcesoria/poduszka_3_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Wazon #1",
+		"category": "akcesoria",
+		"imgSrc": "./img/offer/akcesoria/wazon_1_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Wazon #2",
+		"category": "akcesoria",
+		"imgSrc": "./img/offer/akcesoria/wazon_2_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
+		"title": "Wazon #3",
+		"category": "akcesoria",
+		"imgSrc": "./img/offer/akcesoria/wazon_3_medium.webp",
+		"imgAlt": "alt"
+	},
+
 	{
 		"title": "Nagrobek podwójny #1",
 		"category": "podwojne",
