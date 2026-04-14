@@ -538,10 +538,9 @@ body {
     background-image: url("../img/heros/hero_medium.webp");
   }
   .offer__cards-gravestones, .offer__cards-assortment {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 60px;
+    justify-content: space-evenly;
   }
   .offer__cards__card {
     padding: 0em 1.6em;
