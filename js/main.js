@@ -69,11 +69,6 @@ const prepareGalleryDOMElements = () => {
 const prepareGalleryDOMEvents = () => {
 	prevImgBtn.addEventListener('click', handlePrevImgBtnClick)
 	nextImgBtn.addEventListener('click', handleNextImgBtnClick)
-	document.addEventListener('click', handleClickOutsideLightboxContent(e))
-	document.addEventListener('click', e => {
-		console.log('Clicked')
-		console.log(e)
-	})
 }
 
 const checkSubpage = () => {
@@ -81,8 +76,8 @@ const checkSubpage = () => {
 	const isMainPage = window.location.pathname.includes('/index.html')
 
 	if (isGalleryPage) {
-		prepareDOMElements()
-		prepareDOMEvents()
+		prepareGalleryDOMElements()
+		prepareGalleryDOMEvents()
 		createGalleryItems()
 		handleFilter()
 		imageBtnClose.addEventListener('click', handleImageBtnClose)
@@ -139,18 +134,13 @@ const createGalleryItems = () => {
 	})
 }
 
-const handleClickOutsideLightboxContent = e => {
-	if (!lightboxContent.contains(e.target)) {
-		lightboxDiv.classList.remove('hidden')
-	}
-}
-
 const handleGalleryItemClick = clickedItem => {
 	lightboxDiv.classList.remove('hidden')
 	x = clickedItem
 	let fileName = clickedItem.childNodes[0].src.split('/').pop().replace('_medium', '')
 	// let fileFolder = fileName.split('_')[0]
-	let fileFolder = clickedItem.childNodes[0].src.split('/')[5]
+	let urlSplit = clickedItem.childNodes[0].src.split('/')
+	let fileFolder = urlSplit[urlSplit.length - 2]
 
 	if (fileFolder === 'ksiazka') {
 		currentImgIndex = 0
