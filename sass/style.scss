@@ -404,6 +404,24 @@ body {
 		&.open #filterList {
 			display: block;
 		}
+
+		#goToTopBtn {
+			position: sticky;
+			top: -100px;
+			left: 0;
+			width: 10px;
+			height: 10px;
+			z-index: -1;
+		}
+	}
+
+	#goToTopBtn {
+		position: sticky;
+		top: -100px;
+		left: -300px;
+		width: 10px;
+		height: 10px;
+		z-index: -1;
 	}
 
 	.gallery {
@@ -467,8 +485,17 @@ body {
 					top: 20px;
 					right: 30px;
 					font-size: 30px;
-					color: colors.$white;
+					color: colors.$secondary;
 					cursor: pointer;
+					padding: 5px 10px;
+					user-select: none;
+					background: colors.$grey;
+					border-radius: 8px;
+					transition: 0.2s;
+
+					&:hover {
+						background: colors.$light-grey;
+					}
 				}
 
 				.changeImgBtns {
@@ -483,10 +510,10 @@ body {
 					background: rgba(0, 0, 0, 0.4);
 					border-radius: 8px;
 					transition: 0.2s;
-				}
 
-				.changeImgBtns:hover {
-					background: colors.$light-grey;
+					&:hover {
+						background: colors.$light-grey;
+					}
 				}
 
 				.prevImgBtn {

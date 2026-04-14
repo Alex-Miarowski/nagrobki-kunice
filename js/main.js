@@ -8,6 +8,7 @@ let allNavDesktopItems
 let sections
 let lightboxDiv
 let lightboxImg
+let lightboxContent
 let imageBtnClose
 let changeImgBtns
 let prevImgBtn
@@ -36,14 +37,14 @@ const prepareDOMElements = () => {
 	lightboxImg = document.querySelector('.lightbox-img')
 	imageBtnClose = document.querySelector('.imageBtnClose')
 	changeImgBtns = document.querySelectorAll('.changeImgBtns')
-	prevImgBtn = document.querySelector('#prevImgBtn')
-	nextImgBtn = document.querySelector('#nextImgBtn')
+	// prevImgBtn = document.querySelector('#prevImgBtn')
+	// nextImgBtn = document.querySelector('#nextImgBtn')
 }
 
 const prepareDOMEvents = () => {
 	navBurgerBtn.addEventListener('click', handleBurgerBtnClick)
-	prevImgBtn.addEventListener('click', handlePrevImgBtnClick)
-	nextImgBtn.addEventListener('click', handleNextImgBtnClick)
+	// prevImgBtn.addEventListener('click', handlePrevImgBtnClick)
+	// nextImgBtn.addEventListener('click', handleNextImgBtnClick)
 
 	handleNavMobileItemClick()
 	checkScrollSpy()
@@ -59,11 +60,29 @@ const fetchGalleryItems = () => {
 		.catch(err => console.error(err))
 }
 
+const prepareGalleryDOMElements = () => {
+	prevImgBtn = document.querySelector('#prevImgBtn')
+	nextImgBtn = document.querySelector('#nextImgBtn')
+	lightboxContent = document.querySelector('#lightboxContent')
+}
+
+const prepareGalleryDOMEvents = () => {
+	prevImgBtn.addEventListener('click', handlePrevImgBtnClick)
+	nextImgBtn.addEventListener('click', handleNextImgBtnClick)
+	document.addEventListener('click', handleClickOutsideLightboxContent(e))
+	document.addEventListener('click', e => {
+		console.log('Clicked')
+		console.log(e)
+	})
+}
+
 const checkSubpage = () => {
 	const isGalleryPage = window.location.pathname.includes('/galery.html')
 	const isMainPage = window.location.pathname.includes('/index.html')
 
 	if (isGalleryPage) {
+		prepareDOMElements()
+		prepareDOMEvents()
 		createGalleryItems()
 		handleFilter()
 		imageBtnClose.addEventListener('click', handleImageBtnClose)
@@ -114,16 +133,24 @@ const createGalleryItems = () => {
 		p.textContent = item.title
 		div.append(img, p)
 		galleryContainer.appendChild(div)
-		div.addEventListener('click', () => {
+		img.addEventListener('click', () => {
 			handleGalleryItemClick(div)
 		})
 	})
 }
 
+const handleClickOutsideLightboxContent = e => {
+	if (!lightboxContent.contains(e.target)) {
+		lightboxDiv.classList.remove('hidden')
+	}
+}
+
 const handleGalleryItemClick = clickedItem => {
 	lightboxDiv.classList.remove('hidden')
+	x = clickedItem
 	let fileName = clickedItem.childNodes[0].src.split('/').pop().replace('_medium', '')
-	let fileFolder = fileName.split('_')[0]
+	// let fileFolder = fileName.split('_')[0]
+	let fileFolder = clickedItem.childNodes[0].src.split('/')[5]
 
 	if (fileFolder === 'ksiazka') {
 		currentImgIndex = 0
