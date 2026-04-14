@@ -234,6 +234,12 @@
 		"imgAlt": "alt"
 	},
 	{
+		"title": "Nagrobek pojedynczy #40",
+		"category": "pojedyncze",
+		"imgSrc": "./img/offer/pojedynczy/pojedynczy_40_medium.webp",
+		"imgAlt": "alt"
+	},
+	{
 		"title": "Nagrobek dziecięcy #1",
 		"category": "dzieciece",
 		"imgSrc": "./img/offer/dzieciecy/dzieciecy_1_medium.webp",
@@ -267,12 +273,6 @@
 		"title": "Nagrobek dziecięcy #6",
 		"category": "dzieciece",
 		"imgSrc": "./img/offer/dzieciecy/dzieciecy_6_medium.webp",
-		"imgAlt": "alt"
-	},
-	{
-		"title": "Nagrobek dziecięcy #7",
-		"category": "dzieciece",
-		"imgSrc": "./img/offer/dzieciecy/dzieciecy_7_medium.webp",
 		"imgAlt": "alt"
 	},
 	{
@@ -319,7 +319,7 @@
 		"imgAlt": "alt"
 	},
 	{
-		"title": "Litery #1",
+		"title": "Litery metalowe #1",
 		"category": "akcesoria",
 		"imgSrc": "./img/offer/akcesoria/litery_1_medium.webp",
 		"imgAlt": "alt"
@@ -359,54 +359,5 @@
 		"category": "akcesoria",
 		"imgSrc": "./img/offer/akcesoria/wazon_3_medium.webp",
 		"imgAlt": "alt"
-	},
-
-	{
-		"title": "Nagrobek podwójny #1",
-		"category": "podwojne",
-		"imgSrc": "./img/offer/podwojny.webp",
-		"imgAlt": "alt"
-	},
-	{
-		"title": "Nagrobek urnowy #1",
-		"category": "urnowe",
-		"imgSrc": "./img/offer/urnowy.webp",
-		"imgAlt": "alt"
-	},
-	{
-		"title": "Wazon #1",
-		"category": "wazony",
-		"imgSrc": "./img/offer/wazon.webp",
-		"imgAlt": "alt"
-	},
-	{
-		"title": "Misa #1",
-		"category": "misy",
-		"imgSrc": "./img/offer/misa.webp",
-		"imgAlt": "alt"
-	},
-	{
-		"title": "Tabliczka #1",
-		"category": "tabliczki",
-		"imgSrc": "./img/offer/tabliczka.webp",
-		"imgAlt": "alt"
-	},
-	{
-		"title": "Litery #1",
-		"category": "litery",
-		"imgSrc": "./img/offer/litery.webp",
-		"imgAlt": "alt"
-	},
-	{
-		"title": "Krzyż #1",
-		"category": "krzyze",
-		"imgSrc": "./img/offer/krzyze.webp",
-		"imgAlt": "alt"
-	},
-	{
-		"title": "Lampion #1",
-		"category": "lampiony",
-		"imgSrc": "./img/offer/lampion.webp",
-		"imgAlt": "alt lampion"
 	}
 ]
