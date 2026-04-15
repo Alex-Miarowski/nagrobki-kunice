@@ -124,6 +124,7 @@ const createGalleryItems = () => {
 		div.classList.add('gallery-item', item.category)
 		p.classList.add('gallery-item-title')
 		img.src = item.imgSrc
+		img.loading = "lazy"
 		img.alt = item.imgAlt
 		p.textContent = item.title
 		div.append(img, p)
