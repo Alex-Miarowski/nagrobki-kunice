@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagrobki Kunice</title>
+    <meta name="description" content="Kamieniarstwo Kunice - nagrobki, książki, tabliczki, litery, krzyże">
+    <meta name="keywords"
+        content="nagrobki skałkowe, nagrobki skalne, nagrobki naturalne, nagrobki, skalne, skalkowe, skałkowe, granitowe, granit, naturalne">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/icons/favicon.webp" type="image/x-icon">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="wrapper wrapper-nav">
+            <button class="nav__burger-btn " aria-label="przycisk menu"><img src="./img/icons/menu.svg" alt=""
+                    class="nav__burger-icon "></button>
+            <div class="nav__items nav__items-desktop">
+                <a href="index.html#" class="nav__item-desktop">Strona główna</a>
+                <a href="index.html#offer" class="nav__item-desktop">Oferta</a>
+                <a href="gallery.html#gallery" class="nav__item-desktop nav__item-desktop--active">Galeria</a>
+                <a href="gallery.html#contact" class="nav__item-desktop">Kontakt</a>
+            </div>
+            <div class="nav__items nav__items-mobile">
+                <a href="index.html#" class="nav__item-mobile">Strona główna</a>
+                <a href="index.html#offer" class="nav__item-mobile">Oferta</a>
+                <a href="gallery.html#gallery" class="nav__item-mobile">Galeria</a>
+                <a href="gallery.html#contact" class="nav__item-mobile">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="hero-shadow"></div>
+        <div class="wrapper">
+            <div class="header__text-box">
+                <div class="header__box-shadow"></div>
+                <p class="header__text-heading">ZAKŁAD KAMIENIARSKI</p>
+                <p class="header__text-first">Marek Żółkiewski</p>
+                <p class="header__text">Profesjonalne usługi od 2013</p>
+            </div>
+        </div>
+    </header>
+
+    <section id="gallery" class="gallery-wrapper wrapper section">
+        <div class="filter-dropdown">
+            <button id="filterToggle">Filtry ▾</button>
+            <ul id="filterList">
+                <li><button data-filter="all" class="active">Wszystkie</button></li>
+                <li><button data-filter="pojedyncze">Nagrobki pojedyncze</button></li>
+                <li><button data-filter="dzieciece">Nagrobki dziecięce</button></li>
+                <li><button data-filter="ksiazki">Książki</button></li>
+                <li><button data-filter="akcesoria">Akcesoria</button></li>
+            </ul>
+        </div>
+
+        <div class="gallery">
+            <div class="lightbox hidden">
+                <div id="lightboxContent" class="lightbox-content">
+                    <span class="close imageBtnClose" id="closeBtn">&times;</span>
+                    <img class="lightbox-img" src="" alt="">
+                    <span class="changeImgBtns prevImgBtn" id="prevImgBtn">&#10094;</span>
+                    <span class="changeImgBtns nextImgBtn" id="nextImgBtn">&#10095;</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="wrapper">
+            <div class="section__heading-wrapper">
+                <h2 class="section__heading">Kontakt</h2>
+            </div>
+            <div class="contact__box">
+                <div class="contact__box-map">
+                    <iframe class="contact__box-map-iframe"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d371.46042290040043!2d16.241151807298298!3d51.221324823506635!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470f0d2971aa6005%3A0x2ec6ae22e674e1c3!2sNagrobki%20Granitowe%20-%20Kamieniarstwo%20Legnica-kunice!5e0!3m2!1spl!2spl!4v1751127215282!5m2!1spl!2spl"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="contact__box-text">
+                    <p class="contact__text">Nasz adres:</p>
+                    <p class="contact__text">ul. Kasztelańska 3, 59-216 Kunice</p>
+
+                    <p class="contact__text">Numer:</p>
+                    <p class="contact__text">tel: <a href="tel:788221883">788&#8209;221&#8209;883</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

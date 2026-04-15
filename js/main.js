@@ -13,12 +13,10 @@ let imageBtnClose
 let changeImgBtns
 let prevImgBtn
 let nextImgBtn
-let x
 let GALLERY_ITEMS = []
 let galleryItemIndex = -1
 let currentImgIndex = 0
 let amountOfItemImgs
-
 const main = () => {
 	fetchGalleryItems()
 	prepareDOMElements()
@@ -37,15 +35,10 @@ const prepareDOMElements = () => {
 	lightboxImg = document.querySelector('.lightbox-img')
 	imageBtnClose = document.querySelector('.imageBtnClose')
 	changeImgBtns = document.querySelectorAll('.changeImgBtns')
-	// prevImgBtn = document.querySelector('#prevImgBtn')
-	// nextImgBtn = document.querySelector('#nextImgBtn')
 }
 
 const prepareDOMEvents = () => {
 	navBurgerBtn.addEventListener('click', handleBurgerBtnClick)
-	// prevImgBtn.addEventListener('click', handlePrevImgBtnClick)
-	// nextImgBtn.addEventListener('click', handleNextImgBtnClick)
-
 	handleNavMobileItemClick()
 	checkScrollSpy()
 }
@@ -72,7 +65,7 @@ const prepareGalleryDOMEvents = () => {
 }
 
 const checkSubpage = () => {
-	const isGalleryPage = window.location.pathname.includes('/galery.html')
+	const isGalleryPage = window.location.pathname.includes('/gallery.html')
 	const isMainPage = window.location.pathname.includes('/index.html')
 
 	if (isGalleryPage) {
@@ -109,8 +102,6 @@ const checkSubpage = () => {
 	} else if (isMainPage) {
 		if (window.innerWidth >= 992) {
 			window.addEventListener('scroll', scrollSpyHandle)
-			window.addEventListener('resize', setW)
-			setW()
 		}
 	}
 }
@@ -124,7 +115,7 @@ const createGalleryItems = () => {
 		div.classList.add('gallery-item', item.category)
 		p.classList.add('gallery-item-title')
 		img.src = item.imgSrc
-		img.loading = "lazy"
+		img.loading = 'lazy'
 		img.alt = item.imgAlt
 		p.textContent = item.title
 		div.append(img, p)
@@ -137,9 +128,7 @@ const createGalleryItems = () => {
 
 const handleGalleryItemClick = clickedItem => {
 	lightboxDiv.classList.remove('hidden')
-	x = clickedItem
 	let fileName = clickedItem.childNodes[0].src.split('/').pop().replace('_medium', '')
-	// let fileFolder = fileName.split('_')[0]
 	let urlSplit = clickedItem.childNodes[0].src.split('/')
 	let fileFolder = urlSplit[urlSplit.length - 2]
 
@@ -159,8 +148,8 @@ const handleGalleryItemClick = clickedItem => {
 		let imgUrl = `./img/offer/${fileFolder}/${fileName}`
 		lightboxImg.src = imgUrl
 	}
-	if(window.innerWidth < 768){
-		lightboxImg.src.replace('.webp','_medium.webp')
+	if (window.innerWidth < 768) {
+		lightboxImg.src.replace('.webp', '_medium.webp')
 	}
 }
 
@@ -225,27 +214,6 @@ const scrollSpyHandle = () => {
 			break
 		}
 	}
-}
-
-const calcW = x => {
-	let res = 300 * x + 60 * (x - 1)
-	return res
-}
-
-const setW = () => {
-	let windowWidth = window.innerWidth
-	let xwidth = Math.min(windowWidth, 1200)
-	let calculatedWidth = Math.floor((xwidth + 60) / 330)
-	let x = calcW(calculatedWidth)
-	let maxWidth = document.querySelector('.offer__cards').getBoundingClientRect().width
-	let res
-	if (x > maxWidth) {
-		res = calcW(calculatedWidth - 1)
-	} else {
-		res = x
-	}
-	document.querySelector('.offer__cards-gravestones').style.width = res + 'px'
-	document.querySelector('.offer__cards-assortment').style.width = res + 'px'
 }
 
 const handleFilter = () => {
