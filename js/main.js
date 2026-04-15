@@ -156,11 +156,11 @@ const handleGalleryItemClick = clickedItem => {
 		changeImgBtns.forEach(btn => {
 			btn.classList.add('hidden')
 		})
-		if(window.innerWidth < 768){
-			fileName = fileName.replace('.webp', '_medium.webp')
-		}
 		let imgUrl = `./img/offer/${fileFolder}/${fileName}`
 		lightboxImg.src = imgUrl
+	}
+	if(window.innerWidth < 768){
+		lightboxImg.src.replace('.webp','_medium.webp')
 	}
 }
 
